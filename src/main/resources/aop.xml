@@ -10,7 +10,6 @@
             <aop:before method="before" pointcut="execution(* uz.homework.Transform.start(..))"/>
             <aop:after method="after" pointcut="execution(* uz.homework.Transform.start(..))"/>
             <aop:after-returning method="afterReturning" pointcut="execution(* uz.homework.Transform.start(..))"/>
-            <aop:after-throwing method="afterThrowing" pointcut="execution(* uz.homework.Transform.start(..))"/>
         </aop:aspect>
     </aop:config>
 </beans>

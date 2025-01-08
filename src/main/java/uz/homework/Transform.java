@@ -26,7 +26,7 @@ public class Transform {
         }
 
         if(new Random().nextBoolean()){
-            throw new RuntimeException();
+            throw new RuntimeException("Xatolik yuzaga keldi");
         }
         return numbers;
     }
@@ -36,7 +36,7 @@ public class Transform {
             List<Integer> integers = startNumber();
             System.out.println(integers);
         } catch (Exception e) {
-            logger.severe("Error: " + e.getMessage());
+            logger.severe("Error in start: " + e.getMessage());
         }
     }
 }

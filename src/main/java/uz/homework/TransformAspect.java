@@ -27,9 +27,4 @@ public class TransformAspect {
     public void afterReturning(){
         System.out.println("afterReturning");
     }
-
-    @AfterThrowing("execution(* uz.homework.Transform.start(..))")
-    public void afterThrowing(){
-        System.out.println("afterThrowing");
-    }
 }
