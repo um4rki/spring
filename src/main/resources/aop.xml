@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean name="transform" class="uz.homework.Transform"/>
+    <bean name="transformAspect" class="uz.homework.TransformAspect"/>
+    <!--  Enable AspectJ Auto Proxy  -->
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <!--  Corrected aspect reference to AspectTest  -->
+        <aop:aspect ref="transformAspect">
+            <!--  Corrected method and pointcut expressions  -->
+            <aop:before method="before" pointcut="execution(* uz.homework.Transform.start(..))"/>
+            <aop:after method="after" pointcut="execution(* uz.homework.Transform.start(..))"/>
+            <aop:after-returning method="afterReturning" pointcut="execution(* uz.homework.Transform.start(..))"/>
+            <aop:after-throwing method="afterThrowing" pointcut="execution(* uz.homework.Transform.start(..))"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
