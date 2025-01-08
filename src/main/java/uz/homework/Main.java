@@ -12,8 +12,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aop.xml");
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("uz.homework");
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aop.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("uz.homework");
         Transform bean = context.getBean(Transform.class);
         bean.start(new Transform());
     }

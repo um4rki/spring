@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Logger;
 
 /**
  * Created by: Umar
@@ -14,6 +16,8 @@ import java.util.Random;
  */
 @Component
 public class Transform {
+
+    private static final Logger logger = Logger.getLogger(Transform.class.getName());
 
     public List<Integer> startNumber(){
         List<Integer> numbers = new ArrayList<Integer>();
@@ -28,10 +32,11 @@ public class Transform {
     }
 
     public void start(Transform transform){
-        List<Integer> integers = startNumber();
-        System.out.println(integers);
+        try {
+            List<Integer> integers = startNumber();
+            System.out.println(integers);
+        } catch (Exception e) {
+            logger.severe("Error: " + e.getMessage());
+        }
     }
-
-
-
 }
